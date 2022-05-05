@@ -1,10 +1,10 @@
-package com.example.pelaki.Model;
+package com.example.pelaki.Model.FOOD;
 
-public class TimKiemHangDauHome {
+public class Layout1Food {
     public int id;
-    String ten,anh;
+    public String ten,anh;
 
-    public TimKiemHangDauHome(int id, String ten, String anh) {
+    public Layout1Food(int id, String ten, String anh) {
         this.id = id;
         this.ten = ten;
         this.anh = anh;

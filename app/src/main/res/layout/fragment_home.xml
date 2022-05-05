@@ -28,6 +28,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="DANH MỤC HÀNG"
+                    android:textStyle="bold"
                     android:textColor="#C6FF0606"
                     android:textSize="25sp"></TextView>
 
@@ -56,10 +57,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-
                 android:text="TÌM KIẾM HÀNG ĐẦU"
                 android:textColor="#C6FF0606"
-                android:textSize="25sp"></TextView>
+                android:textSize="25sp"
+                android:textStyle="bold"></TextView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyTimKiem"
@@ -86,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="NẠP THẺ VÀ DỊCH VỤ"
+                android:textStyle="bold"
                 android:textColor="#C6FF0606"
                 android:textSize="25sp"></TextView>
 
