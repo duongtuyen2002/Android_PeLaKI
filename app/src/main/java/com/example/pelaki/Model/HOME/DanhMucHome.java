@@ -1,4 +1,4 @@
-package com.example.pelaki.Model;
+package com.example.pelaki.Model.HOME;
 
 public class DanhMucHome {
     public int id;

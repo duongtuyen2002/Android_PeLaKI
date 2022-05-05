@@ -1,4 +1,4 @@
-package com.example.pelaki.Adapter;
+package com.example.pelaki.Adapter.FOOD;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pelaki.Model.Layout1Food;
+import com.example.pelaki.Model.FOOD.Layout1Food;
 import com.example.pelaki.R;
 import com.squareup.picasso.Picasso;
 

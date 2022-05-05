@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
@@ -22,12 +21,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.pelaki.Adapter.DanhMucAdapter;
-import com.example.pelaki.Adapter.NapTheVaDichVuAdapter;
-import com.example.pelaki.Adapter.TimKiemHangDauAdapter;
-import com.example.pelaki.Model.DanhMucHome;
-import com.example.pelaki.Model.NapTheVaDichVuHome;
-import com.example.pelaki.Model.TimKiemHangDauHome;
+import com.example.pelaki.Adapter.HOME.DanhMucAdapter;
+import com.example.pelaki.Adapter.HOME.NapTheVaDichVuAdapter;
+import com.example.pelaki.Adapter.HOME.TimKiemHangDauAdapter;
+import com.example.pelaki.Model.HOME.DanhMucHome;
+import com.example.pelaki.Model.HOME.NapTheVaDichVuHome;
+import com.example.pelaki.Model.HOME.TimKiemHangDauHome;
 import com.example.pelaki.R;
 import com.squareup.picasso.Picasso;
 
