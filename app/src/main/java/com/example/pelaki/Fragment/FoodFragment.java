@@ -12,6 +12,7 @@ import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,7 +22,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.pelaki.Adapter.FOOD.Layout1Adapter;
+import com.example.pelaki.Adapter.FOOD.ThucAnAdapter;
 import com.example.pelaki.Model.FOOD.Layout1Food;
+import com.example.pelaki.Model.FOOD.ThucAn;
 import com.example.pelaki.R;
 import com.squareup.picasso.Picasso;
 
@@ -34,25 +37,74 @@ import java.util.ArrayList;
 public class FoodFragment extends Fragment {
 
     String UrlLayout1 = "http://loyalist002-001-site1.gtempurl.com/jsonfood.php";
-    RecyclerView recyLayout1;
+    String UrlThucAn = "http://loyalist002-001-site1.gtempurl.com/jsonthucan.php";
+    RecyclerView recyLayout1,recyThucan;
     ArrayList<Layout1Food> listLayout1;
     Layout1Adapter layout1Adapter;
+
+    ArrayList<ThucAn> ListthucAn;
+    ThucAnAdapter thucAnAdapter;
     ViewFlipper vFlipperFood;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_food,container,false);
+        vFlipperFood = view.findViewById(R.id.vFliper_food);
+        //Layout1
         recyLayout1= view.findViewById(R.id.recyLayout1);
         listLayout1 = new ArrayList<>();
-        vFlipperFood = view.findViewById(R.id.vFliper_food);
         layout1Adapter = new Layout1Adapter(getContext(),listLayout1);
         LinearLayoutManager layout = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyLayout1.setLayoutManager(layout);
         recyLayout1.setAdapter(layout1Adapter);
+
+        //Thuc An
+        recyThucan = view.findViewById(R.id.recy_thucan);
+        ListthucAn = new ArrayList<>();
+        thucAnAdapter = new ThucAnAdapter(getContext(), ListthucAn);
+        GridLayoutManager layoutThucAn = new GridLayoutManager(getContext(),2,GridLayoutManager.VERTICAL,false);
+        recyThucan.setLayoutManager(layoutThucAn);
+        recyThucan.setAdapter(thucAnAdapter);
         viewFlipper();
         getLayout1(UrlLayout1);
+        getThucAn(UrlThucAn);
         return view;
+    }
+
+    private void getThucAn(String url) {
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                if(response != null){
+                    int id = 0;
+                    int gia = 0;
+                    String Ten = "";
+                    String Anh = "";
+                    for (int i =0 ; i<response.length();i++){
+                        try {
+                            JSONObject jsonObject = response.getJSONObject(i);
+                            id = jsonObject.getInt("id");
+                            Ten = jsonObject.getString("ten");
+                            gia = jsonObject.getInt("gia");
+                            Anh = jsonObject.getString("hinhanh");
+                            ListthucAn.add(new ThucAn(id,Ten,gia,Anh));
+                            thucAnAdapter.notifyDataSetChanged();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        requestQueue.add(jsonArrayRequest);
     }
 
     private void getLayout1(String url) {
