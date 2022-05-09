@@ -15,10 +15,11 @@
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/adapterdanhmuc.xml" value="0.25" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/dondichvu.xml" value="0.26875" />
+        <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/dong_thucan.xml" value="0.33" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/dongdanhmuc.xml" value="0.25" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/dongdanhmuchome.xml" value="0.26875" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/dongdichvu.xml" value="0.33" />
-        <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/donglayout1food.xml" value="0.2536231884057971" />
+        <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/donglayout1food.xml" value="0.75" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/dongtimkiemhangdauhome.xml" value="0.26875" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/fragment_favorite.xml" value="0.25" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/fragment_food.xml" value="0.17979610750695088" />
@@ -26,7 +27,7 @@
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/fragment_noti.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/fragment_profile.xml" value="0.2536231884057971" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/layout/fragment_search.xml" value="0.25" />
-        <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/menu/bottom_navigation.xml" value="0.1" />
+        <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/menu/bottom_navigation.xml" value="0.25" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.135" />
         <entry key="..\:/Users/kubjn/Documents/PeLaKi/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.135" />
       </map>
