@@ -1,21 +1,20 @@
 package com.example.pelaki;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.ImageView;
 
 import com.example.pelaki.Fragment.FoodFragment;
 import com.example.pelaki.Fragment.HomeFragment;
 import com.example.pelaki.Fragment.NotificationFragment;
 import com.example.pelaki.Fragment.ProfileFragment;
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
-        ImageView imageView = new ImageView(getApplicationContext());
+        BadgeDrawable badgeDrawable = bottomNav.getOrCreateBadge(R.id.nav_thongbao);
+        badgeDrawable.setVisible(true);
+        badgeDrawable.setNumber(10);
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {

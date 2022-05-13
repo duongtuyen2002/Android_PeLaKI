@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img.dienthoai"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        tools:srcCompat="@tools:sample/avatars"></ImageView>
+
+    <TextView
+        android:id="@+id/tv.tendt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/img.dienthoai"
+        android:text="Tên điện thoại"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv.giadt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv.tendt"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/tv.gia"
+        android:gravity="center"
+        android:text="Giá điện thoại "
+        android:textColor="#00A6FF"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tv.gia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv.tendt"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/img.dienthoai"
+        android:gravity="center"
+        android:text="Giá: "
+        android:textColor="#00A6FF"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+</RelativeLayout>

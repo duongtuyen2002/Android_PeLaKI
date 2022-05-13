@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_donmua"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/ic_baseline_content_paste_24" />
+        <!--        android:layout_below="@+id/view_muahang"-->
+        <TextView
+            android:id="@+id/donmua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/img_donmua"
+            android:text="Đơn mua"
+            android:textSize="18dp" />
+        <!--        android:layout_below="@+id/view_muahang"-->
+
+        <View
+            android:id="@+id/view_donmua"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/donmua"
+            android:layout_marginTop="10dp"
+            android:background="#939893" />
+
+        <ImageButton
+            android:id="@+id/card"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/view_donmua"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/choxacnhan" />
+
+        <TextView
+            android:id="@+id/choxacnhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Chờ xác nhận"
+            android:textSize="13dp" />
+
+        <ImageButton
+            android:id="@+id/print"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/view_donmua"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/card"
+            android:background="@drawable/hophang" />
+
+        <TextView
+            android:id="@+id/cholayhang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/print"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="10dp"
+            android:text="Chờ lấy hàng"
+            android:textSize="13dp" />
+
+        <ImageButton
+            android:id="@+id/car"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/view_donmua"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/print"
+            android:background="@drawable/giaohang" />
+
+        <TextView
+            android:id="@+id/danggiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/car"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="10dp"
+            android:text="Đang giao"
+            android:textSize="13dp" />
+
+        <ImageButton
+            android:id="@+id/start"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/view_donmua"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/car"
+            android:background="@drawable/ic_baseline_start_24" />
+
+        <TextView
+            android:id="@+id/danhgia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/start"
+            android:layout_marginLeft="315dp"
+            android:layout_marginTop="10dp"
+            android:text="Đánh giá"
+            android:textSize="13dp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>
