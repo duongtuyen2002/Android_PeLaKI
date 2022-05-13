@@ -28,7 +28,7 @@ public class Layout1Adapter extends RecyclerView.Adapter<Layout1Adapter.ItemHold
     @NonNull
     @Override
     public Layout1Adapter.ItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.donglayout1food,null);
+        View v = LayoutInflater.from(context).inflate(R.layout.dong_layout1food,null);
         ItemHolder itemHolder = new ItemHolder(v);
         return itemHolder;
     }

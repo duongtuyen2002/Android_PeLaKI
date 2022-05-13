@@ -29,7 +29,7 @@ public class NapTheVaDichVuAdapter extends RecyclerView.Adapter<NapTheVaDichVuAd
     @NonNull
     @Override
     public ItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.dongdichvu,null);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.dong_dichvu,null);
         ItemHolder itemHolder = new ItemHolder(v);
         return itemHolder;
     }

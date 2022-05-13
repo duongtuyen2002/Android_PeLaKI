@@ -1,14 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/purple_700">
+    android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/profile"
+        android:background="#108080"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/ic_baseline_settings_24" />
+
+        <TextView
+            android:id="@+id/tv.nguoitheodoi"
+            android:textColor="#FFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv.user"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="26dp"
+            android:layout_toEndOf="@+id/card.img.profile"
+            android:text="Người theo dõi: 1"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tv.dangtheodoi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv.user"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="26dp"
+            android:textColor="#FFF"
+            android:layout_toEndOf="@+id/tv.nguoitheodoi"
+            android:text="Đang theo dõi: 5"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tv.user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="83dp"
+            android:layout_toEndOf="@+id/card.img.profile"
+            android:text="nhutuyen_58"
+            android:textColor="#FFF"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card.img.profile"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_below="@+id/setting"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="250dp">
+
+            <ImageView
+                android:id="@+id/img.profile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                tools:srcCompat="@drawable/user" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab.profile"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Profile Fragment"
-        android:textSize="30sp" />
+        app:tabIndicatorColor="#108080"
+        app:tabTextColor="#108080"
+        app:tabMode="scrollable"
+        android:layout_below="@id/profile"></com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager.profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tab.profile" />
 </RelativeLayout>
