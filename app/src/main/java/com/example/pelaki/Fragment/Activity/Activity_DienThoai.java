@@ -1,6 +1,9 @@
 package com.example.pelaki.Fragment.Activity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,18 +29,34 @@ public class Activity_DienThoai extends FragmentActivity {
     RecyclerView recyclerView;
     ArrayList<DienThoai> list;
     DienThoaiAdapter adapter;
-
+    EditText search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_dienthoai);
-
         recyclerView = findViewById(R.id.recy_dt);
         list = new ArrayList<>();
         adapter = new DienThoaiAdapter(getApplicationContext(),list);
         LinearLayoutManager layout = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layout);
         recyclerView.setAdapter(adapter);
+        search = findViewById(R.id.edit_timkiem);
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {filter(editable.toString());
+
+            }
+        });
         getDienThoai(URL);
     }
 
@@ -74,5 +93,15 @@ public class Activity_DienThoai extends FragmentActivity {
             }
         });
         requestQueue.add(jsonArrayRequest);
+    }
+
+    public void filter(String text) {
+        ArrayList<DienThoai> filterList = new ArrayList<>();
+        for(DienThoai TC: list){
+            if (TC.getTen().toLowerCase().contains(text.toLowerCase())) {
+                filterList.add(TC);
+            }
+        }
+       adapter.filterSP(filterList);
     }
 }

@@ -8,6 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textSize="34sp"
         android:text="Bài viết không có gì cả hihi" />
 
 </FrameLayout>
