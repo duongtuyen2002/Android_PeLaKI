@@ -44,10 +44,9 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.ItemHold
         holder.layoutdanhmuc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (holder.tenLoaiSP.getText().equals("Quần Áo")) {
+                if (holder.tenLoaiSP.getText().equals("Điện Thoại")) {
                     Intent intent = new Intent(context, Activity_DienThoai.class);
                     context.startActivity(intent);
-
                 }
             }
         });
