@@ -43,7 +43,6 @@ public class ViewPagerProfile extends FragmentStatePagerAdapter {
             default:
                 title = "Mua hàng";
                 break;
-
         }
         return title;
     }

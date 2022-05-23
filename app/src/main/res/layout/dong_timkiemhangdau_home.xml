@@ -2,11 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlt.timkiem"
     android:layout_width="match_parent"
-    android:layout_gravity="center"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/rlt.timkiemhangdau"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -34,9 +36,9 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:src="@drawable/top"
             android:id="@+id/imageView"
             android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_height="30dp"
+            android:src="@drawable/top" />
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

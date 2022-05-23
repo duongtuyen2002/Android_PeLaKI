@@ -1,12 +1,14 @@
 package com.example.pelaki.Model.Acivity;
 
-public class DienThoai {
+public class GioHang {
     int id;
+    int soluong;
     long gia;
     String ten,hinhanh;
 
-    public DienThoai(int id, long gia, String ten, String hinhanh) {
+    public GioHang(int id, String ten,int soluong, long gia, String hinhanh) {
         this.id = id;
+        this.soluong = soluong;
         this.gia = gia;
         this.ten = ten;
         this.hinhanh = hinhanh;
@@ -20,11 +22,20 @@ public class DienThoai {
         this.id = id;
     }
 
+
+    public int getSoluong() {
+        return soluong;
+    }
+
+    public void setSoluong(int soluong) {
+        this.soluong = soluong;
+    }
+
     public long getGia() {
         return gia;
     }
 
-    public void setGia(int gia) {
+    public void setGia(long gia) {
         this.gia = gia;
     }
 

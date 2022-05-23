@@ -11,10 +11,15 @@ import com.example.pelaki.Fragment.FoodFragment;
 import com.example.pelaki.Fragment.HomeFragment;
 import com.example.pelaki.Fragment.NotificationFragment;
 import com.example.pelaki.Fragment.ProfileFragment;
+import com.example.pelaki.Model.Acivity.GioHang;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    public static ArrayList<GioHang> listgiohang,listGiohangFood;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +30,18 @@ public class MainActivity extends AppCompatActivity {
         BadgeDrawable badgeDrawable = bottomNav.getOrCreateBadge(R.id.nav_thongbao);
         badgeDrawable.setVisible(true);
         badgeDrawable.setNumber(10);
+
+        if (listgiohang != null){
+
+        }else {
+            listgiohang = new ArrayList<>();
+        }
+
+        if (listGiohangFood != null){
+
+        }else {
+            listGiohangFood = new ArrayList<>();
+        }
 
     }
 

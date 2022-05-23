@@ -1,12 +1,17 @@
 package com.example.pelaki.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
@@ -23,6 +28,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.pelaki.Adapter.FOOD.Layout1Adapter;
 import com.example.pelaki.Adapter.FOOD.ThucAnAdapter;
+import com.example.pelaki.Fragment.Activity.Activity_GioHang_Food;
 import com.example.pelaki.Model.FOOD.Layout1Food;
 import com.example.pelaki.Model.FOOD.ThucAn;
 import com.example.pelaki.R;
@@ -46,11 +52,16 @@ public class FoodFragment extends Fragment {
     ThucAnAdapter thucAnAdapter;
     ViewFlipper vFlipperFood;
 
+    EditText search;
+    TextView btnBack, btnGio;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_food,container,false);
         vFlipperFood = view.findViewById(R.id.vFliper_food);
+        search = view.findViewById(R.id.edit_timkiemfood);
+        btnBack = view.findViewById(R.id.tv_back_food);
+        btnGio = view.findViewById(R.id.tv_donhang);
         //Layout1
         recyLayout1= view.findViewById(R.id.recyLayout1);
         listLayout1 = new ArrayList<>();
@@ -69,7 +80,41 @@ public class FoodFragment extends Fragment {
         viewFlipper();
         getLayout1(UrlLayout1);
         getThucAn(UrlThucAn);
+
+       btnGio.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(getContext(), Activity_GioHang_Food.class);
+               startActivity(intent);
+           }
+       });
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {filter(editable.toString());
+
+            }
+        });
         return view;
+    }
+
+    private void filter(String text) {
+        ArrayList<ThucAn> filterList = new ArrayList<>();
+        for(ThucAn TC: ListthucAn){
+            if (TC.getTen().toLowerCase().contains(text.toLowerCase())) {
+                filterList.add(TC);
+            }
+        }
+        thucAnAdapter.filterSP(filterList);
     }
 
     private void getThucAn(String url) {
