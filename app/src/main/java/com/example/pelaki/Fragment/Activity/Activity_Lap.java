@@ -17,8 +17,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.pelaki.Adapter.Activity.DienThoaiAdapter;
-import com.example.pelaki.Model.Acivity.DienThoai;
+import com.example.pelaki.Adapter.Activity.LapTopAdapter;
+import com.example.pelaki.Model.Acivity.LapTop;
 import com.example.pelaki.R;
 
 import org.json.JSONArray;
@@ -27,27 +27,32 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class Activity_DienThoai extends FragmentActivity {
-    String URL = "http://loyalist002-001-site1.gtempurl.com/jsondienthoai.php";
+public class Activity_Lap extends FragmentActivity {
+    String URL = "http://loyalist002-001-site1.gtempurl.com/jsonlaptop.php";
     RecyclerView recyclerView;
-    ArrayList<DienThoai> list;
-    DienThoaiAdapter adapter;
+    ArrayList<LapTop> list;
+    LapTopAdapter adapter;
     EditText search;
     TextView btnBack, btnGio;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dienthoai);
-        recyclerView = findViewById(R.id.recy_dt);
+        setContentView(R.layout.activity_laptop);
+        recyclerView = findViewById(R.id.recy_lt);
         list = new ArrayList<>();
-        adapter = new DienThoaiAdapter(getApplicationContext(),list);
+        adapter = new LapTopAdapter(getApplicationContext(),list);
         LinearLayoutManager layout = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layout);
         recyclerView.setAdapter(adapter);
-        btnBack = findViewById(R.id.tv_back_dt);
-        btnGio = findViewById(R.id.tv_giohang);
-
+        btnBack = findViewById(R.id.tv_back_lt);
+        btnGio = findViewById(R.id.tv_giohanglt);
+        btnGio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Activity_GioHang.class);
+                startActivity(intent);
+            }
+        });
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,14 +62,7 @@ public class Activity_DienThoai extends FragmentActivity {
             }
         });
 
-        btnGio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Activity_DienThoai.this, Activity_GioHang.class);
-                startActivity(intent);
-            }
-        });
-        search = findViewById(R.id.edit_timkiem);
+        search = findViewById(R.id.edit_timkiemlt);
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -81,10 +79,10 @@ public class Activity_DienThoai extends FragmentActivity {
 
             }
         });
-        getDienThoai(URL);
+        getLap(URL);
     }
 
-    private void getDienThoai(String URL) {
+    private void getLap(String URL) {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
@@ -101,7 +99,7 @@ public class Activity_DienThoai extends FragmentActivity {
                             Ten = jsonObject.getString("tensp");
                             gia = jsonObject.getInt("giasp");
                             Anh = jsonObject.getString("hinhanhsp");
-                            list.add(new DienThoai(id,gia,Ten,Anh));
+                            list.add(new LapTop(id,gia,Ten,Anh));
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -120,8 +118,8 @@ public class Activity_DienThoai extends FragmentActivity {
     }
 
     public void filter(String text) {
-        ArrayList<DienThoai> filterList = new ArrayList<>();
-        for(DienThoai TC: list){
+        ArrayList<LapTop> filterList = new ArrayList<>();
+        for(LapTop TC: list){
             if (TC.getTen().toLowerCase().contains(text.toLowerCase())) {
                 filterList.add(TC);
             }

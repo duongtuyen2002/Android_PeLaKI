@@ -1,11 +1,10 @@
 package com.example.pelaki.Model.Acivity;
 
-public class DienThoai {
-    int id;
-    long gia;
+public class LapTop {
+    int id, gia;
     String ten,hinhanh;
 
-    public DienThoai(int id, long gia, String ten, String hinhanh) {
+    public LapTop(int id, int gia, String ten, String hinhanh) {
         this.id = id;
         this.gia = gia;
         this.ten = ten;
@@ -20,7 +19,7 @@ public class DienThoai {
         this.id = id;
     }
 
-    public long getGia() {
+    public int getGia() {
         return gia;
     }
 

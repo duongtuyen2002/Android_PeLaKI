@@ -1,5 +1,6 @@
 package com.example.pelaki.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
+    Context context;
     String URLDanhMuc = "http://loyalist002-001-site1.gtempurl.com/jsondanhmuc.php";
     String URLTimKiem ="http://loyalist002-001-site1.gtempurl.com/jsontimkiemhangdau.php";
     String URLDichVu = "http://loyalist002-001-site1.gtempurl.com/jsondichvu.php";
@@ -64,7 +66,6 @@ public class HomeFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2,GridLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(danhMucAdapter);
-
         //Ánh xạ tìm kiếm
         recyclerView2 = view.findViewById(R.id.recyTimKiem);
         listTimKiem = new ArrayList<>();

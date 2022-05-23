@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,6 +51,7 @@ public class NapTheVaDichVuAdapter extends RecyclerView.Adapter<NapTheVaDichVuAd
     }
 
     public class ItemHolder extends RecyclerView.ViewHolder {
+        RelativeLayout layout;
         public TextView gia, tenhang, tendichvu;
         public ImageView anh;
         public ItemHolder(@NonNull View itemView) {
@@ -58,6 +60,7 @@ public class NapTheVaDichVuAdapter extends RecyclerView.Adapter<NapTheVaDichVuAd
             anh = itemView.findViewById(R.id.iconThucAn);
             tendichvu = itemView.findViewById(R.id.tendichvu);
             tenhang = itemView.findViewById(R.id.tenhang);
+
         }
     }
 }

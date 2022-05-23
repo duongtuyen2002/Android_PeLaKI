@@ -14,9 +14,22 @@
         android:theme="@style/Theme.PeLaKi"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Fragment.Activity.Activity_Lap"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".Fragment.Activity.Activity_GioHang"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name=".Fragment.Activity.Activity_GioHang_Food"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
             android:name=".Fragment.Activity.Activity_DienThoai"
             android:exported="false"
             tools:ignore="Instantiatable" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

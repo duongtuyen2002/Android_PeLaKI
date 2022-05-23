@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DCDCDC">
@@ -9,40 +10,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-            <ViewFlipper
-                android:id="@+id/vFliper"
+        <ViewFlipper
+            android:id="@+id/vFliper"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"></ViewFlipper>
+
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@+id/vFliper"
+            android:layout_marginTop="6dp"
+            android:background="#FFF">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/danhmuchang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="DANH MỤC HÀNG"
+                android:textColor="#C6FF0606"
+                android:textSize="25sp"
+                android:textStyle="bold"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyDanhMucHang"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"></ViewFlipper>
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/danhmuchang"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="-1dp"
+                android:layout_marginTop="0dp"
+                android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
 
-            <RelativeLayout
-                android:id="@+id/layout1"
-                android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:layout_below="@+id/vFliper"
-                android:layout_marginTop="6dp"
-                android:background="#FFF">
-
-                <TextView
-                    android:id="@+id/danhmuchang"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="DANH MỤC HÀNG"
-                    android:textStyle="bold"
-                    android:textColor="#C6FF0606"
-                    android:textSize="25sp"></TextView>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyDanhMucHang"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/danhmuchang"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="-1dp"
-                    android:layout_marginTop="0dp"
-                    android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
-
-            </RelativeLayout>
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/lay"
@@ -57,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:text="TÌM KIẾM HÀNG ĐẦU"
                 android:textColor="#C6FF0606"
                 android:textSize="25sp"
@@ -68,8 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/timkiemhome"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="-1dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginStart="-3dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>
 
@@ -82,6 +85,7 @@
             android:background="#FFF">
 
             <TextView
+                android:layout_marginTop="10dp"
                 android:id="@+id/napthevadichvu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,17 +96,19 @@
                 android:textSize="25sp"></TextView>
 
             <ViewFlipper
+                android:layout_marginTop="10dp"
                 android:id="@+id/vFliperDichVU"
-                android:layout_below="@+id/napthevadichvu"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"></ViewFlipper>
+                android:layout_height="140dp"
+                android:layout_below="@+id/napthevadichvu"></ViewFlipper>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyNaptheVaDichvu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/vFliperDichVU"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="1dp"
+                android:layout_marginStart="2dp"
                 android:layout_marginTop="1dp"
                 android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>

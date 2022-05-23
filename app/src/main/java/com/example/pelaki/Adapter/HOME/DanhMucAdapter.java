@@ -1,5 +1,6 @@
 package com.example.pelaki.Adapter.HOME;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pelaki.Fragment.Activity.Activity_DienThoai;
+import com.example.pelaki.Fragment.Activity.Activity_Lap;
 import com.example.pelaki.Model.HOME.DanhMucHome;
 import com.example.pelaki.R;
 import com.squareup.picasso.Picasso;
@@ -37,16 +39,26 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.ItemHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ItemHolder holder, @SuppressLint("RecyclerView") int position) {
         DanhMucHome danhMuc = danhMucArrayList.get(position);
         holder.tenLoaiSP.setText(danhMuc.getTen());
         Picasso.with(context).load(danhMuc.getAnh()).placeholder(R.drawable.noimage).error(R.drawable.erro).into(holder.anhLoaiSP);
         holder.layoutdanhmuc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (holder.tenLoaiSP.getText().equals("Điện Thoại")) {
-                    Intent intent = new Intent(context, Activity_DienThoai.class);
-                    context.startActivity(intent);
+                switch (position){
+                    case 0:
+                        Intent lt = new Intent(context, Activity_Lap.class);
+                        context.startActivity(lt);
+                        break;
+                    case 1:
+                        Intent dt = new Intent(context, Activity_DienThoai.class);
+                        context.startActivity(dt);
+                        break;
+                    default:
+                        Intent khac = new Intent(context, Activity_DienThoai.class);
+                        context.startActivity(khac);
+
                 }
             }
         });
